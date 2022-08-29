@@ -1,0 +1,16 @@
+{
+    "English": {
+        "title": "Welcome to AniBase Docs",
+        "description": "Here you will find the terms, the privacy policy and other documents related to AniBase.",
+        "privacy_policy": "Privacy Policy",
+        "terms_and_conditions": "Terms and Conditions",
+        "language": "Language"
+    },
+    "Spanish (español)": {
+        "title": "Bienvenido a AniBase Docs",
+        "description": "Aquí encontraras los términos, la política de privacidad y otros documentos relacionados con AniBase.",
+        "privacy_policy": "Política de privacidad",
+        "terms_and_conditions": "Términos y condiciones",
+        "language": "Idioma"
+    }
+}

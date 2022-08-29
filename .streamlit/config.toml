@@ -3,5 +3,17 @@ base="dark"
 primaryColor = "#FF4B4B"
 backgroundColor = "#0E1117"
 secondaryBackgroundColor = "#262730"
+tertiaryBackgroundColor = "#3A3B46"
 textColor = "#FAFAFA"
 font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+port = 80
+
+[client]
+caching = false
+displayEnabled = true
+showErrorDetails = false

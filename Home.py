@@ -1,17 +1,28 @@
 import streamlit as st
 import streamlit.components.v1 as components
 from config import *
+from translations import get_translated_string
+
+language = st.session_state['language'] if 'language' in st.session_state else 'English'
+page = 'Home'
 
 st.set_page_config(
     page_title="AniBase Docs",
     page_icon=":book:",
+    initial_sidebar_state="expanded",
 )
 
-st.title("Welcome to AniBase Docs")
+with st.sidebar:
+    langs = [
+        "English",
+        "Spanish (español)",
+    ]
+    language = st.session_state['language'] = st.selectbox(get_translated_string(language, page, "language"), langs, index=langs.index(language))
 
-st.write("""
-Here you will find the terms, the privacy policy and other documents related to AniBase.
-""")
+
+st.title(get_translated_string(language, page, "title"))
+
+st.write(get_translated_string(language, page, "description"))
 
 st.write(f"""
 <style>
@@ -56,13 +67,13 @@ st.write(f"""
 <dic class="container">
     <a class="link" href="/Privacy_Policy" target="_self">
         <div class="link-title">
-            Privacy Policy
+            {get_translated_string(language, page, "privacy_policy")}
         </div>
         <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
     </a>
     <a class="link" href="/Terms_and_Conditions" target="_self">
         <div class="link-title">
-            Terms and Conditions
+            {get_translated_string(language, page, "terms_and_conditions")}
         </div>
         <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
     </a>
